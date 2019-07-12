@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-DemoApplication<parkingsystem>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.example.parkingsystem.DemoApplication",
+      "projectName": "parkingsystem",
+      "args": ""
+    }
+  ]
+}
