@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+.title{
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 2.25rem;
+}
+
+.smallcol{
+    /* to make the total of margin,padding and content in the box = width */
+    box-sizing: border-box; 
+    padding: 10px;
+    margin:1px;
+    height: 35vh;
+    width: 33%;
+    border-color: black;
+    border-style: solid;
+  }
+
+  #left-col {
+    flex-wrap: wrap;
+  }
