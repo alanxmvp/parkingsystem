@@ -1,7 +1,5 @@
 package com.example.parkingsystem.repositories;
 
-import java.util.List;
-
 import com.example.parkingsystem.entities.Location;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface LocationRepository extends JpaRepository<Location, Long> {
 
-  List<Location> findAllByLocationId(long id);
+  // List<Location> findAllByLocation_Id(long id);
 
   // List<User> findAllByLastName(String lastName);
 

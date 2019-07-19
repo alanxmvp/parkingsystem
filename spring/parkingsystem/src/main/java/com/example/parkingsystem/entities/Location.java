@@ -13,7 +13,7 @@ import javax.persistence.Id;
 public class Location {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private long id;
 
   @Column(name = "label")
   private String label;
@@ -21,11 +21,11 @@ public class Location {
   @Column(name = "total")
   private Long total;
 
-  public Long getId() {
+  public long getId() {
     return this.id;
   }
 
-  public void setId(Long id) {
+  public void setId(long id) {
     this.id = id;
   }
 

@@ -1,7 +1,5 @@
 package com.example.parkingsystem.repositories;
 
-import java.util.List;
-
 import com.example.parkingsystem.entities.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
