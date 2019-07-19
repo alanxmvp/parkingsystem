@@ -11,8 +11,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface ParkinglotRepository extends JpaRepository<Parkinglot, Long> {
 
-  List<Parkinglot> findByLocationidAndStatus(Long locationid, Long status);
+  List<Parkinglot> findByLocationidAndStatus(Long locationId, Long status);
 
-  List<Parkinglot> findByLocationid(Long locationid);
+  List<Parkinglot> findByLocationId(Long locationId);
 
 }
