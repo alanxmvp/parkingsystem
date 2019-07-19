@@ -1,16 +1,15 @@
 package com.example.parkingsystem.repositories;
 
-import com.example.parkingsystem.entities.User;
+import com.example.parkingsystem.entities.Location;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * UserRepository
  */
-public interface UserRepository extends JpaRepository<User, Long> {
-  // List<User> findAllByEmail(String email);
+public interface LocationRepository extends JpaRepository<Location, Long> {
 
-  // List<User> findAllByFirstName(String firstName);
+  // List<Location> findAllByLocation_Id(long id);
 
   // List<User> findAllByLastName(String lastName);
 
