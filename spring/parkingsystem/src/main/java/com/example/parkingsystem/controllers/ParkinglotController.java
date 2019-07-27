@@ -27,13 +27,13 @@ public class ParkinglotController {
   }
 
   @GetMapping(value = "/lotStatusByLocByStatus", produces = "application/json")
-  public List<Parkinglot> displayAvailableByLocByStatus(@RequestParam Long locationid, @RequestParam Long status) {
-    return parkingRepository.findByLocationidAndStatus(locationid, status);
+  public List<Parkinglot> displayAvailableByLocByStatus(@RequestParam Long locationId, @RequestParam Long status) {
+    return parkingRepository.findByLocationIdAndStatus(locationId, status);
   }
 
   @GetMapping(value = "/lotStatusByLoc", produces = "application/json")
-  public List<Parkinglot> displayAvailableByLoc(@RequestParam Long locationid) {
-    return parkingRepository.findByLocationid(locationid);
+  public List<Parkinglot> displayAvailableByLoc(@RequestParam Long locationId) {
+    return parkingRepository.findByLocationId(locationId);
   }
 
 }

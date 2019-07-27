@@ -19,10 +19,10 @@ public class Parkinglot {
   private Long status;
 
   @Column(name = "location_id")
-  private Long locationid;
+  private Long locationId;
 
   @Column(name = "user_id")
-  private Long user_id;
+  private Long userId;
 
   public Long getId() {
     return this.id;
@@ -40,20 +40,20 @@ public class Parkinglot {
     this.status = status;
   }
 
-  public Long getLocationid() {
-    return this.locationid;
+  public Long getLocationId() {
+    return this.locationId;
   }
 
-  public void setLocationid(Long locationid) {
-    this.locationid = locationid;
+  public void setLocationId(Long locationId) {
+    this.locationId = locationId;
   }
 
-  public Long getUser_id() {
-    return this.user_id;
+  public Long getUserId() {
+    return this.userId;
   }
 
-  public void setUser_id(Long user_id) {
-    this.user_id = user_id;
+  public void setUserId(Long userId) {
+    this.userId = userId;
   }
 
 }
