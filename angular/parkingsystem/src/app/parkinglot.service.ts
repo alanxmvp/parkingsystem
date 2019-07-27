@@ -1,48 +1,25 @@
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { BehaviorSubject } from 'rxjs';
-
-
-const baseUrl = 'api url'
-
-const httpOptions ={
-    headers: new HttpHeaders({
-        'Content-Type': 'aplication/json',
-    }),
-}
-
-interface parkingLot{
-    id : number
-    location_id: number
-    status: number
-    user_id: number
-}
 
 @Injectable({
-    providedIn:'root',
+    providedIn: 'root'
 })
 
 export class parkingLotService{
-    parkingLots = new BehaviorSubject<parkingLot[]>([])
-    
-    constructor(private http: HttpClient){
-        this.http.get(`${baseUrl}/parkingLots`).subscribe((response:any[]) => {
-            let formattedParkingLot =[]
-            for (let parkingLot of response){
-                formattedParkingLot.push({
-                    id:parkingLot.id,
-                    location_id:parkingLot.location_id,
-                    status: parkingLot.status,
-                    user_id: parkingLot.user_id
-                })
-            }
-            this.parkingLots.next(formattedParkingLot)
-        })
+    constructor(private http:HttpClient){}
+    getLocations(){
+        const url  = 'http://localhost:8080/api/locations'
+        return this.http.get(url);
+    }
+    // testing
+    getLocationById(location_id){
+        const url  = 'http://localhost:8080/api/locations?id =' + location_id
+        return this.http.get(url);
     }
 
-    getParkingLots(){
-        return this.parkingLots
+    occupiedLot(id, status,location_id,user_id){
+        const url='http://localhost:8080/api/parkinglot?id =' + id
+        const data = {status:status,location_id:location_id,user_id:user_id}
+        return this.http.post(url,data);
     }
-
-    
 }

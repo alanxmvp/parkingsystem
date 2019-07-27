@@ -28,7 +28,7 @@ public class ParkinglotController {
 
   @GetMapping(value = "/lotStatusByLocByStatus", produces = "application/json")
   public List<Parkinglot> displayAvailableByLocByStatus(@RequestParam Long locationId, @RequestParam Long status) {
-    return parkingRepository.findByLocationidAndStatus(locationId, status);
+    return parkingRepository.findByLocationIdAndStatus(locationId, status);
   }
 
   @GetMapping(value = "/lotStatusByLoc", produces = "application/json")
