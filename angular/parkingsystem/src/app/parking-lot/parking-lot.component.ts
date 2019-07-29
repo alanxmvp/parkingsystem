@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms'
 import {parkingLotService} from '../parkinglot.service';
 
 @Component({
@@ -7,14 +8,16 @@ import {parkingLotService} from '../parkinglot.service';
   styleUrls: ['./parking-lot.component.css']
 })
 export class ParkingLotComponent implements OnInit {
-  parkinglots: ParkingLot[]=[];
+  parkingLotStatus = new FormGroup({
 
+  })
   constructor(private service: parkingLotService) { }
 
   ngOnInit() {
   }
-
-  onSubmit(id,status,location_id,user_id){
-    this.service.occupiedLot(id,status,location_id,user_id).subscribe(parkinglot => {this.parkinglots.push(parkinglot as ParkingLot)})
+  
+  onSubmit(){
+    const parkingLotsStatus = this.parkingLotStatus.value
+    this.service.updateParkingLot(parkingLotsStatus)
   }
 }
