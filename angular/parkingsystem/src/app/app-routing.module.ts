@@ -7,6 +7,7 @@ import {AdminComponent} from './admin/admin.component'
 
 const routes: Routes = [
   {path: 'home', component: HomePageComponent},
+  {path: 'location/:locationId/parkinglot', component: ParkingLotComponent},
   {path: 'parkinglot', component: ParkingLotComponent},
   {path: 'admin', component:AdminComponent}
 ];

@@ -18,6 +18,6 @@ export class ParkingLotComponent implements OnInit {
   
   onSubmit(){
     const parkingLotsStatus = this.parkingLotStatus.value
-    this.service.updateParkingLot(parkingLotsStatus)
+    // this.service.updateParkingLot(parkingLotsStatus)
   }
 }

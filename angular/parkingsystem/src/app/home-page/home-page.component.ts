@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {parkingLotService} from '../parkinglot.service'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -8,10 +9,13 @@ import {parkingLotService} from '../parkinglot.service'
 })
 export class HomePageComponent implements OnInit {
   homepages: HomePage[] = []
+  locationId: number
 
-  constructor(private service:parkingLotService) { }
+  constructor(private service:parkingLotService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.locationId = this.route.snapshot.params.locationId
+    
     this.service.getLocations().subscribe(homepages=>{
       this.homepages = homepages as HomePage[]
       console.log(this.homepages)
