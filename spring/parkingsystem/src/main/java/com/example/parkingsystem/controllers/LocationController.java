@@ -4,7 +4,7 @@ package com.example.parkingsystem.controllers;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.parkingsystem.entities.Location;
+  import com.example.parkingsystem.entities.Location;
 import com.example.parkingsystem.repositories.LocationRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +20,13 @@ public class LocationController {
   @Autowired
   LocationRepository locationRepository;
 
+  // get location parking slot availability 
   @GetMapping(value = "/locations", produces = "application/json")
   public List<Location> showAllLocation() {
     return locationRepository.findAll();
   }
 
+  //not using
   @GetMapping(value = "/locations/{id}", produces = "application/json")
   public Optional<Location> showLocationDetail(@PathVariable long id) {
     return locationRepository.findById(id);

@@ -23,37 +23,49 @@
   <main role="main" class="container">
       <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary rounded shadow-sm">
           <div class="lh-100">
-              <h5 class="mb-0 text-white lh-100">Car Park Control</h5>     
+              <h5 class="mb-0 text-white lh-100">Car Park Control</h5>
+                  
           </div> 
       </div>
       <div class="my-3 p-3 bg-white rounded shadow-sm">
-          <form [formGroup] = "adminHome">
+          <form>
               <div class="form-group">
                 <label for="carParkLocation">Select Car Park Location</label>
-                <select class="form-control" id="carParkLocation">
-                  <option>First World</option>
-                  <option>Second World</option>
-                  <option>Third World</option>
+                <select [(ngModel)]="selectedValue" name="location" >
+                  <option *ngFor="let location of locations" [value]="location.value">
+                    {{location.viewValue}}
+                  </option>
                 </select>
               </div>
+              
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="carParkStatusMaintenance" name="carParkStatusMaintenance" class="custom-control-input">
+                  <label class="custom-control-label" for="carParkStatusMaintenance">Maintenance</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="carParkStatusAvailable" name="carParkStatusAvailable" class="custom-control-input">
+                  <label class="custom-control-label" for="carParkStatusAvailable">Available</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" id="carParkStatusOccupied" name="carParkStatusOccupied" class="custom-control-input">
+                  <label class="custom-control-label" for="carParkStatusOccupied">Occupied</label>
+                </div>
               <div class="form-group">
-                <label for="carParkRow">Select Car Park Row</label>
-                <select class="form-control" id="carParkRow">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                <label for="remark">Remark</label>
+                <textarea class="form-control" id="remark" rows="2"></textarea>
               </div>
-              <div class="form-group">
-                  <label for="carParkSlot">Select Car Park Slot</label>
-                  <select class="form-control" id="carParkSlot">
-                    <option>1</option>
-					</select>
+
+            <div>
+              
+              <p> Selected location: {{selectedValue}} </p>
+            </div>
+              <button class="btn btn-primary" type="submit">Update</button>
+            </form>
+      </div>
+      <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary rounded shadow-sm">
+          <div class="lh-100">
               <h5 class="mb-0 text-white lh-100">Car Park Search History</h5>
-              </div>
-          </form>
+          </div> 
       </div>
       <div class="my-3 p-3 bg-white rounded shadow-sm">
               <div class="container">
@@ -69,6 +81,7 @@
                     </ul>
                   </div>
                 </div>       
+           
               </div>
   </main>
 </body>

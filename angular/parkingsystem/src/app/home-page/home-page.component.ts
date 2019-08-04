@@ -22,10 +22,10 @@ export class HomePageComponent implements OnInit {
     })
   }
 
-  getLocationById(location_id){
-    this.service.getLocationById(location_id).subscribe(homepages => {
-      this.homepages = homepages as HomePage[]
-    })
-  }
+  // getLocationById(location_id){
+  //   this.service.getLocationById(location_id).subscribe(homepages => {
+  //     this.homepages = homepages as HomePage[]
+  //   })
+  // }
 
 }

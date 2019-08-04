@@ -1,77 +1,176 @@
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script 
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script 
-  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-  </script>
-  <script 
-  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-</script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script 
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script 
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" 
+    src="./build/Config.js"></script>
+
+<!-- <link href="./parking-lot.component.css" rel="stylesheet"> -->
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top navbar-primary bg-primary">
-      <img class="mr-3" src="https://www.mysmartgroup.co.uk/wp-content/uploads/2017/12/1-2-dell-logo-3d-white-png.png" alt="" width="100" height="50">
-      <a class="navbar-brand mr-auto mr-lg-0 text-white" [routerLink] = "['/home']">Dell Parking System</a>
-  </nav>
-  <div class="nav-scroller bg-white shadow-sm pt-4 mt-5">
-      <nav class="navbar navbar-light bg-light"> 
-      <a class="navbar-brand mb-0 h1">Username</a> 
-      </nav>
-  </div>
-  <main role="main" class="container">
-      <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary rounded shadow-sm">
-          <div class="lh-100">
-              <h5 class="mb-0 text-white lh-100">First World Parking Slots <span class="badge badge-pill badge-light ml-4">16</span></h5>
-              
-          </div> 
-      </div>
-      <div class="my-3 p-3 bg-white rounded shadow-sm">
-          <div class="row justify-content-around">
-              <div class="col-2">
-              <form [formGroup] ="parkingLotStatus"  (ngSubmit)="onSubmit()">
-                  <div class="list-group" id="list-tab" role="tablist">
-                      <a type ="submit" class="list-group-item list-group-item-action" id="list-col1-s1">R1S1</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s2">R1S2</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s3">R1S3</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s4">R1S4</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s5">R1S5</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s6">R1S6</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s7">R1S6</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s8">R1S8</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s9">R1S9</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s10">R1S10</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s11">R1S11</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s12">R1S12</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s13">R1S13</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s14">R1S14</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s15">R1S15</a>
-                      <a class="list-group-item list-group-item-action" id="list-col1-s16">R1S16</a>
-                  </div>    
-                </form>     
-              </div>
-              <div class="col-2">
-                      <div class="list-group" id="list-tab" role="tablist">
-                          <a class="list-group-item list-group-item-action" id="list-col2-s1">R2S1</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s2">R2S2</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s3">R2S3</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s4">R2S4</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s5">R2S5</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s6">R2S6</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s7">R2S7</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s8">R2S8</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s9">R2S9</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s10">R2S10</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s11">R2S11</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s12">R2S12</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s13">R2S13</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s14">R2S14</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s15">R2S15</a>
-                          <a class="list-group-item list-group-item-action" id="list-col2-s16">R2S16</a>
-                      </div>
-              </div>
-          </div>
-      </div>
-  </main>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-primary bg-primary">
+        <img class="mr-3" src="https://www.mysmartgroup.co.uk/wp-content/uploads/2017/12/1-2-dell-logo-3d-white-png.png" alt="" width="100" height="50">
+        <a class="navbar-brand mr-auto mr-lg-0 text-white"  [routerLink] = "['/home']">Dell Parking System</a>
+    </nav>
+    <div class="nav-scroller bg-white shadow-sm pt-4 mt-5">
+        <nav class="navbar navbar-light bg-light"> 
+        <a class="navbar-brand mb-0 h1">Username</a> 
+        </nav>
+    </div>
+    <main role="main" class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary rounded shadow-sm">
+            <div class="lh-100">
+                <h5 class="mb-0 text-white lh-100">First World Parking Slots <span class="badge badge-pill badge-light ml-4">16</span></h5>
+                
+            </div> 
+        </div>
+        <div class="d-block my-3 p-3 bg-white rounded shadow-sm" style="height: 100%">
+            <!-- <div id="firstCarParkContainer"> -->
+            <!-- <div class="gateExit">Exit</div> -->
+            <!-- <div [ngSwitch]="status" >
+                <div *ngSwitchCase="getParkingLotById(2)"></div>
+            </div> -->
+            <div class="firstRow1">
+                <div class="col-2">                       
+                        <div class="square" id="first-row1-s1" (click)="onSubmit()" type="submit">R1S1</div>
+                        <div class="square" id="first-row1-s2">R1S2</div>
+                        <div class="square" id="first-row1-s3">R1S3</div>
+                        <div class="square" id="first-row1-s4">R1S4</div>
+                        <div class="square" id="first-row1-s5">R1S5</div>
+                        <div class="square" id="first-row1-s6">R1S6</div>
+                        <div class="square" id="first-row1-s7">R1S6</div>
+                        <div class="square" id="first-row1-s8">R1S8</div>
+                        <div class="square" id="first-row1-s9">R1S9</div>
+                        <div class="square" id="first-row1-s10">R1S10</div>
+                        <div class="square" id="first-row1-s11">R1S11</div>
+                        <div class="square" id="first-row1-s12">R1S12</div>
+                        <div class="square" id="first-row1-s13">R1S13</div>
+                        <div class="square" id="first-row1-s14">R1S14</div>
+                        <div class="square" id="first-row1-s15">R1S15</div>
+                        <div class="square" id="first-row1-s16">R1S16</div>
+                        <div class="square" id="first-row1-s17">R1S17</div>
+                        <div class="square" id="first-row1-s18">R1S18</div>
+                        <div class="square" id="first-row1-s18">R1S19</div>
+                        <div class="square" id="first-row1-s20">R1S20</div>
+                        <div class="square" id="first-row1-s21">R1S21</div>
+                        <div class="square" id="first-row1-s22">R1S22</div>
+                        <div class="square" id="first-row1-s23">R1S23</div>
+                        <div class="square" id="first-row1-s24">R1S24</div>
+                        <div class="square" id="first-row1-s25">R1S25</div>
+                        <div class="square" id="first-row1-s26">R1S26</div>
+                        <div class="square" id="first-row1-s27">R1S27</div>
+                        <div class="square" id="first-row1-s28">R1S28</div>
+                        <div class="square" id="first-row1-s29">R1S29</div>    
+                </div>
+            </div>
+            <div class="firstRow2">
+                    <div class="col-2">                       
+                            <div class="square" id="first-row2-s1">R2S1</div>
+                            <div class="square" id="first-row2-s2">R2S2</div>
+                            <div class="square" id="first-row2-s3">R2S3</div>
+                            <div class="square" id="first-row2-s4">R2S4</div>
+                            <div class="square" id="first-row2-s5">R2S5</div>
+                            <div class="square" id="first-row2-s6">R2S6</div>
+                            <div class="square" id="first-row2-s7">R2S6</div>
+                            <div class="square" id="first-row2-s8">R2S8</div>
+                            <div class="square" id="first-row2-s9">R2S9</div>
+                            <div class="square" id="first-row2-s10">R2S10</div>
+                            <div class="square" id="first-row2-s11">R2S11</div>
+                            <div class="square" id="first-row2-s12">R2S12</div>
+                            <div class="square" id="first-row2-s13">R2S13</div>
+                            <div class="square" id="first-row2-s14">R2S14</div>
+                            <div class="square" id="first-row2-s15">R2S15</div>
+                            <div class="square" id="first-row2-s16">R2S16</div>
+                            <div class="square" id="first-row2-s17">R2S17</div>
+                            <div class="square" id="first-row2-s18">R2S18</div>
+                            <div class="square" id="first-row2-s18">R2S19</div>
+                            <div class="square" id="first-row2-s20">R2S20</div>
+                            <div class="square" id="first-row2-s21">R2S21</div>
+                            <div class="square" id="first-row2-s22">R2S22</div>
+                            <div class="square" id="first-row2-s23">R2S23</div>
+                            <div class="square" id="first-row2-s24">R2S24</div>
+                            <div class="square" id="first-row2-s25">R2S25</div>
+                            <div class="square" id="first-row2-s26">R2S26</div>
+                            <div class="square" id="first-row2-s27">R2S27</div>
+                            <div class="square" id="first-row2-s28">R2S28</div>
+                            <div class="square" id="first-row2-s29">R2S29</div>      
+                    </div>
+                </div>
+                <div class="firstRow3">
+                        <div class="col-2">                       
+                                <div class="square" id="first-row3-s1">R3S1</div>
+                                <div class="square" id="first-row3-s2">R3S2</div>
+                                <div class="square" id="first-row3-s3">R3S3</div>
+                                <div class="square" id="first-row3-s4">R3S4</div>
+                                <div class="square" id="first-row3-s5">R3S5</div>
+                                <div class="square" id="first-row3-s6">R3S6</div>
+                                <div class="square" id="first-row3-s7">R3S6</div>
+                                <div class="square" id="first-row3-s8">R3S8</div>
+                                <div class="square" id="first-row3-s9">R3S9</div>
+                                <div class="square" id="first-row3-s10">R3S10</div>
+                                <div class="square" id="first-row3-s11">R3S11</div>
+                                <div class="square" id="first-row3-s12">R3S12</div>
+                                <div class="square" id="first-row3-s13">R3S13</div>
+                                <div class="square" id="first-row3-s14">R3S14</div>
+                                <div class="square" id="first-row3-s15">R3S15</div>
+                                <div class="square" id="first-row3-s16">R3S16</div>
+                                <div class="square" id="first-row3-s17">R3S17</div>
+                                <div class="square" id="first-row3-s18">R3S18</div>
+                                <div class="square" id="first-row3-s18">R3S19</div>
+                                <div class="square" id="first-row3-s20">R3S20</div>
+                                <div class="square" id="first-row3-s21">R3S21</div>
+                                <div class="square" id="first-row3-s22">R3S22</div>
+                                <div class="square" id="first-row3-s23">R3S23</div>
+                                <div class="square" id="first-row3-s24">R3S24</div>
+                                <div class="square" id="first-row3-s25">R3S25</div>
+                                <div class="square" id="first-row3-s26">R3S26</div>
+                                <div class="square" id="first-row3-s27">R3S27</div>
+                                <div class="square" id="first-row3-s28">R3S28</div>
+                                <div class="square" id="first-row3-s29">R3S29</div>   
+                        </div>
+                    </div>
+                    <div class="firstRow4A">
+                            <div class="col-2">                       
+                                    <div class="square" id="first-row4-s1">R4S1</div>
+                                    <div class="square" id="first-row4-s2">R4S2</div>
+                                    <div class="square" id="first-row4-s3">R4S3</div>
+                                    <div class="square" id="first-row4-s4">R4S4</div>
+                                    <div class="square" id="first-row4-s5">R4S5</div>
+                                    <div class="square" id="first-row4-s6">R4S6</div>
+                                    <div class="square" id="first-row4-s7">R4S6</div>
+                                    <div class="square" id="first-row4-s8">R4S8</div>
+                                    <div class="square" id="first-row4-s9">R4S9</div>
+                                    <div class="square" id="first-row4-s10">R4S10</div>
+                                    <div class="square" id="first-row4-s11">R4S11</div>
+                                    <div class="square" id="first-row4-s12">R4S12</div>
+                                    <div class="square" id="first-row4-s13">R4S13</div>
+                                    <div class="square" id="first-row4-s14">R4S14</div>    
+                            </div>
+                        </div>
+                        <div class="firstRow4B">
+                                <div class="col-2">                       
+                                    <div class="square" id="first-row4-s15">R4S15</div>
+                                    <div class="square" id="first-row4-s16">R4S16</div>
+                                    <div class="square" id="first-row4-s17">R4S17</div>
+                                    <div class="square" id="first-row4-s18">R4S18</div>
+                                    <div class="square" id="first-row4-s18">R4S19</div>
+                                    <div class="square" id="first-row4-s20">R4S20</div>
+                                    <div class="square" id="first-row4-s21">R4S21</div>
+                                    <div class="square" id="first-row4-s22">R4S22</div>
+                                    <div class="square" id="first-row4-s23">R4S23</div>
+                                    <div class="square" id="first-row4-s24">R4S24</div>
+                                    <div class="square" id="first-row4-s25">R4S25</div>
+                                    <div class="square" id="first-row4-s26">R4S26</div>     
+                                </div>
+                            </div>
+            <!-- <div class="gateEntrance">Entrance</div> -->
+    </div>
+    </main>
 </body>
