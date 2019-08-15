@@ -30,15 +30,32 @@ export class parkingLotService{
         return this.http.get(url);
     }
 
+    //get all parkinglot
+    getParkingLotAll(){
+        const url = 'http://localhost:8080/api//lotStatusAll'
+        return this.http.get(url);
+    }
+
+    //parking lot
+    // get parkinglot status by id
+    getParkingLotById(parkingLotId){
+        const url = 'http://localhost:8080/api/lotStatus/' + parkingLotId
+        return this.http.get(url);
+    }
+
+    // parking lot
+    // update parkinglot status by id
+    updateParkingLot(data){
+        const updateurl = 'http://localhost:8080/api/parkinglotUpdate/' + data.parkingLotId 
+        const params = data;
+        console.log(updateurl)
+        this.http.post(updateurl,params).toPromise().then(data =>{console.log(data);}); 
+    }
+
     // not in use
     // get location status by id
     getLocationById(location_id){
         const url  = 'http://localhost:8080/api/locations?id =' + location_id
-        return this.http.get(url);
-    }
-
-    getParkingLotById(parkingLotId){
-        const url = 'http://localhost:8080/api/lotStatus/' + parkingLotId
         return this.http.get(url);
     }
 
@@ -47,13 +64,5 @@ export class parkingLotService{
         const url='http://localhost:8080/api/parkinglot?id =' + id
         const data = {status:status,location_id:location_id,user_id:user_id}
         return this.http.post(url,data);
-    }
-    // parking lot
-    // update status by id
-    updateParkingLot(data){
-        const updateurl = 'http://localhost:8080/api/parkinglotUpdate/' + data.parkingLotId 
-        const params = data;
-        console.log(updateurl)
-        this.http.post(updateurl,params).toPromise().then(data =>{console.log(data);}); 
     }
 }

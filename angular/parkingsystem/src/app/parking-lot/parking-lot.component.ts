@@ -1,49 +1,65 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms'
-import {parkingLotService} from '../parkinglot.service';
+import { parkingLotService } from '../parkinglot.service';
 import { ActivatedRoute } from '@angular/router';
+
+interface ParkingLot{
+  id: number,
+  status:number,
+  location_id: number,
+  user_id:number
+}
+
+function getParkingId(id){
+  var parkingLotIds = document.getElementById(id).getAttribute("data-id");
+  return parkingLotIds;
+}
 
 @Component({
   selector: 'app-parking-lot',
   templateUrl: './parking-lot.component.html',
   styleUrls: ['./parking-lot.component.css']
 })
+
 export class ParkingLotComponent implements OnInit {
-  // parkingLotStatus = new FormGroup({
-  //   status: new FormControl(0),
-  //   location_id:new FormControl(1),
-  //   user_id: new FormControl(1)
-  // })
   parkingLots: ParkingLot[] = []
   locationId: number
-  name : number;
+  parkingLotId: number 
+  id: number
   postData ={
-    parkingLotId : (this.name),
+    parkingLotId : null,
     status : 0,
     locationId : 1,
     userId : 1
   }
 
+  constructor(private service: parkingLotService, private route: ActivatedRoute) { }
+
+  // work in progress (get status of the parking slot)
   getParkingLotById(data){
-    this.locationId = this.route.snapshot.params.locationId
-    console.log("status:", data)
+    // this.locationId = this.route.snapshot.params.locationId
+    console.log("status :", data)
     this.service.getParkingLotById(data).subscribe(parkingLots=>{
       this.parkingLots = parkingLots as ParkingLot[]
       console.log(this.parkingLots)
     })
   }
 
-  constructor(private service: parkingLotService, private route: ActivatedRoute) { }
-
   ngOnInit() {
+    // this.parkingLotId = this.route.snapshot.params.locationId
+    this.service.getParkingLotAll().subscribe(parkingLots=>{
+      this.parkingLots = parkingLots as ParkingLot[]
+      console.log(this.parkingLots)
+    })
   }
   
-  onSubmit(){
+  onSubmit(event){
+    var id = event.target.id;
+    var getParkingLocationId = getParkingId(id);
+    this.postData.parkingLotId = parseInt(getParkingLocationId,10);  
+    // console.log("ID : " + this.postData.parkingLotId);
     const data = this.postData
-
     console.log(data);
-
-    // const parkingLotsStatus = this.parkingLotStatus.value
     this.service.updateParkingLot(data)
+    alert("Request completed!");
   }
 }

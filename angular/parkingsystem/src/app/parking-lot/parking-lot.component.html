@@ -17,7 +17,7 @@
 <body>
     <nav class="navbar navbar-expand-lg fixed-top navbar-primary bg-primary">
         <img class="mr-3" src="https://www.mysmartgroup.co.uk/wp-content/uploads/2017/12/1-2-dell-logo-3d-white-png.png" alt="" width="100" height="50">
-        <a class="navbar-brand mr-auto mr-lg-0 text-white"  [routerLink] = "['/home']">Dell Parking System</a>
+        <a class="navbar-brand mr-auto mr-lg-0 text-white" [routerLink] = "['/home']">Dell Parking System</a>
     </nav>
     <div class="nav-scroller bg-white shadow-sm pt-4 mt-5">
         <nav class="navbar navbar-light bg-light"> 
@@ -32,142 +32,140 @@
             </div> 
         </div>
         <div class="d-block my-3 p-3 bg-white rounded shadow-sm" style="height: 100%">
-            <!-- <div id="firstCarParkContainer"> -->
-            <!-- <div class="gateExit">Exit</div> -->
             <!-- <div [ngSwitch]="status" >
                 <div *ngSwitchCase="getParkingLotById(2)"></div>
             </div> -->
             <div class="firstRow1">
-                <div class="col-2">                       
-                        <div class="square" id="first-row1-s1" (click)="onSubmit()" type="submit">R1S1</div>
-                        <div class="square" id="first-row1-s2">R1S2</div>
-                        <div class="square" id="first-row1-s3">R1S3</div>
-                        <div class="square" id="first-row1-s4">R1S4</div>
-                        <div class="square" id="first-row1-s5">R1S5</div>
-                        <div class="square" id="first-row1-s6">R1S6</div>
-                        <div class="square" id="first-row1-s7">R1S6</div>
-                        <div class="square" id="first-row1-s8">R1S8</div>
-                        <div class="square" id="first-row1-s9">R1S9</div>
-                        <div class="square" id="first-row1-s10">R1S10</div>
-                        <div class="square" id="first-row1-s11">R1S11</div>
-                        <div class="square" id="first-row1-s12">R1S12</div>
-                        <div class="square" id="first-row1-s13">R1S13</div>
-                        <div class="square" id="first-row1-s14">R1S14</div>
-                        <div class="square" id="first-row1-s15">R1S15</div>
-                        <div class="square" id="first-row1-s16">R1S16</div>
-                        <div class="square" id="first-row1-s17">R1S17</div>
-                        <div class="square" id="first-row1-s18">R1S18</div>
-                        <div class="square" id="first-row1-s18">R1S19</div>
-                        <div class="square" id="first-row1-s20">R1S20</div>
-                        <div class="square" id="first-row1-s21">R1S21</div>
-                        <div class="square" id="first-row1-s22">R1S22</div>
-                        <div class="square" id="first-row1-s23">R1S23</div>
-                        <div class="square" id="first-row1-s24">R1S24</div>
-                        <div class="square" id="first-row1-s25">R1S25</div>
-                        <div class="square" id="first-row1-s26">R1S26</div>
-                        <div class="square" id="first-row1-s27">R1S27</div>
-                        <div class="square" id="first-row1-s28">R1S28</div>
-                        <div class="square" id="first-row1-s29">R1S29</div>    
+                <div class="col-2" *ngFor ="let parkingLot of parkingLots; let i = index">
+                        <div class="square" id="first-row1-s1" (click)="onSubmit($event)" type="submit" data-id ="1">R1S1</div>
+                        <div class="square" id="first-row1-s2" (click)="onSubmit($event)" type="submit" data-id ="2">R1S2</div>
+                        <div class="square" id="first-row1-s3" (click)="onSubmit($event)" type="submit" data-id ="3">R1S3</div>
+                        <div class="square" id="first-row1-s4" (click)="onSubmit($event)" type="submit" data-id ="4">R1S4</div>
+                        <div class="square" id="first-row1-s5" (click)="onSubmit($event)" type="submit" data-id ="5">R1S5</div>
+                        <div class="square" id="first-row1-s6" (click)="onSubmit($event)" type="submit" data-id ="6">R1S6</div>
+                        <div class="square" id="first-row1-s7" (click)="onSubmit($event)" type="submit" data-id ="7">R1S6</div>
+                        <div class="square" id="first-row1-s8" (click)="onSubmit($event)" type="submit" data-id ="8">R1S8</div>
+                        <div class="square" id="first-row1-s9" (click)="onSubmit($event)" type="submit" data-id ="9">R1S9</div>
+                        <div class="square" id="first-row1-s10" (click)="onSubmit($event)" type="submit" data-id ="10">R1S10</div>
+                        <div class="square" id="first-row1-s11" (click)="onSubmit($event)" type="submit" data-id ="11">R1S11</div>
+                        <div class="square" id="first-row1-s12" (click)="onSubmit($event)" type="submit" data-id ="12">R1S12</div>
+                        <div class="square" id="first-row1-s13" (click)="onSubmit($event)" type="submit" data-id ="13">R1S13</div>
+                        <div class="square" id="first-row1-s14" (click)="onSubmit($event)" type="submit" data-id ="14">R1S14</div>
+                        <div class="square" id="first-row1-s15" (click)="onSubmit($event)" type="submit" data-id ="15">R1S15</div>
+                        <div class="square" id="first-row1-s16" (click)="onSubmit($event)" type="submit" data-id ="16">R1S16</div>
+                        <div class="square" id="first-row1-s17" (click)="onSubmit($event)" type="submit" data-id ="17">R1S17</div>
+                        <div class="square" id="first-row1-s18" (click)="onSubmit($event)" type="submit" data-id ="18">R1S18</div>
+                        <div class="square" id="first-row1-s18" (click)="onSubmit($event)" type="submit" data-id ="19">R1S19</div>
+                        <div class="square" id="first-row1-s20" (click)="onSubmit($event)" type="submit" data-id ="20">R1S20</div>
+                        <div class="square" id="first-row1-s21" (click)="onSubmit($event)" type="submit" data-id ="21">R1S21</div>
+                        <div class="square" id="first-row1-s22" (click)="onSubmit($event)" type="submit" data-id ="22">R1S22</div>
+                        <div class="square" id="first-row1-s23" (click)="onSubmit($event)" type="submit" data-id ="23">R1S23</div>
+                        <div class="square" id="first-row1-s24" (click)="onSubmit($event)" type="submit" data-id ="24">R1S24</div>
+                        <div class="square" id="first-row1-s25" (click)="onSubmit($event)" type="submit" data-id ="25">R1S25</div>
+                        <div class="square" id="first-row1-s26" (click)="onSubmit($event)" type="submit" data-id ="26">R1S26</div>
+                        <div class="square" id="first-row1-s27" (click)="onSubmit($event)" type="submit" data-id ="27">R1S27</div>
+                        <div class="square" id="first-row1-s28" (click)="onSubmit($event)" type="submit" data-id ="28">R1S28</div>
+                        <div class="square" id="first-row1-s29" (click)="onSubmit($event)" type="submit" data-id ="29" >R1S29</div>    
                 </div>
             </div>
             <div class="firstRow2">
                     <div class="col-2">                       
-                            <div class="square" id="first-row2-s1">R2S1</div>
-                            <div class="square" id="first-row2-s2">R2S2</div>
-                            <div class="square" id="first-row2-s3">R2S3</div>
-                            <div class="square" id="first-row2-s4">R2S4</div>
-                            <div class="square" id="first-row2-s5">R2S5</div>
-                            <div class="square" id="first-row2-s6">R2S6</div>
-                            <div class="square" id="first-row2-s7">R2S6</div>
-                            <div class="square" id="first-row2-s8">R2S8</div>
-                            <div class="square" id="first-row2-s9">R2S9</div>
-                            <div class="square" id="first-row2-s10">R2S10</div>
-                            <div class="square" id="first-row2-s11">R2S11</div>
-                            <div class="square" id="first-row2-s12">R2S12</div>
-                            <div class="square" id="first-row2-s13">R2S13</div>
-                            <div class="square" id="first-row2-s14">R2S14</div>
-                            <div class="square" id="first-row2-s15">R2S15</div>
-                            <div class="square" id="first-row2-s16">R2S16</div>
-                            <div class="square" id="first-row2-s17">R2S17</div>
-                            <div class="square" id="first-row2-s18">R2S18</div>
-                            <div class="square" id="first-row2-s18">R2S19</div>
-                            <div class="square" id="first-row2-s20">R2S20</div>
-                            <div class="square" id="first-row2-s21">R2S21</div>
-                            <div class="square" id="first-row2-s22">R2S22</div>
-                            <div class="square" id="first-row2-s23">R2S23</div>
-                            <div class="square" id="first-row2-s24">R2S24</div>
-                            <div class="square" id="first-row2-s25">R2S25</div>
-                            <div class="square" id="first-row2-s26">R2S26</div>
-                            <div class="square" id="first-row2-s27">R2S27</div>
-                            <div class="square" id="first-row2-s28">R2S28</div>
-                            <div class="square" id="first-row2-s29">R2S29</div>      
+                            <div class="square" id="first-row2-s1" (click)="onSubmit($event)" type="submit" data-id ="30">R2S1</div>
+                            <div class="square" id="first-row2-s2" (click)="onSubmit($event)" type="submit" data-id ="31">R2S2</div>
+                            <div class="square" id="first-row2-s3" (click)="onSubmit($event)" type="submit" data-id ="32">R2S3</div>
+                            <div class="square" id="first-row2-s4" (click)="onSubmit($event)" type="submit" data-id ="33">R2S4</div>
+                            <div class="square" id="first-row2-s5" (click)="onSubmit($event)" type="submit" data-id ="34">R2S5</div>
+                            <div class="square" id="first-row2-s6" (click)="onSubmit($event)" type="submit" data-id ="35">R2S6</div>
+                            <div class="square" id="first-row2-s7" (click)="onSubmit($event)" type="submit" data-id ="36">R2S7</div>
+                            <div class="square" id="first-row2-s8" (click)="onSubmit($event)" type="submit" data-id ="37">R2S8</div>
+                            <div class="square" id="first-row2-s9" (click)="onSubmit($event)" type="submit" data-id ="38">R2S9</div>
+                            <div class="square" id="first-row2-s10" (click)="onSubmit($event)" type="submit" data-id ="39">R2S10</div>
+                            <div class="square" id="first-row2-s11" (click)="onSubmit($event)" type="submit" data-id ="40">R2S11</div>
+                            <div class="square" id="first-row2-s12" (click)="onSubmit($event)" type="submit" data-id ="41">R2S12</div>
+                            <div class="square" id="first-row2-s13" (click)="onSubmit($event)" type="submit" data-id ="42">R2S13</div>
+                            <div class="square" id="first-row2-s14" (click)="onSubmit($event)" type="submit" data-id ="43">R2S14</div>
+                            <div class="square" id="first-row2-s15" (click)="onSubmit($event)" type="submit" data-id ="44">R2S15</div>
+                            <div class="square" id="first-row2-s16" (click)="onSubmit($event)" type="submit" data-id ="45">R2S16</div>
+                            <div class="square" id="first-row2-s17" (click)="onSubmit($event)" type="submit" data-id ="46">R2S17</div>
+                            <div class="square" id="first-row2-s18" (click)="onSubmit($event)" type="submit" data-id ="47">R2S18</div>
+                            <div class="square" id="first-row2-s18" (click)="onSubmit($event)" type="submit" data-id ="48">R2S19</div>
+                            <div class="square" id="first-row2-s20" (click)="onSubmit($event)" type="submit" data-id ="49">R2S20</div>
+                            <div class="square" id="first-row2-s21" (click)="onSubmit($event)" type="submit" data-id ="50">R2S21</div>
+                            <div class="square" id="first-row2-s22" (click)="onSubmit($event)" type="submit" data-id ="51">R2S22</div>
+                            <div class="square" id="first-row2-s23" (click)="onSubmit($event)" type="submit" data-id ="52">R2S23</div>
+                            <div class="square" id="first-row2-s24" (click)="onSubmit($event)" type="submit" data-id ="53">R2S24</div>
+                            <div class="square" id="first-row2-s25" (click)="onSubmit($event)" type="submit" data-id ="54">R2S25</div>
+                            <div class="square" id="first-row2-s26" (click)="onSubmit($event)" type="submit" data-id ="55">R2S26</div>
+                            <div class="square" id="first-row2-s27" (click)="onSubmit($event)" type="submit" data-id ="56">R2S27</div>
+                            <div class="square" id="first-row2-s28" (click)="onSubmit($event)" type="submit" data-id ="57">R2S28</div>
+                            <div class="square" id="first-row2-s29" (click)="onSubmit($event)" type="submit" data-id ="58">R2S29</div>      
                     </div>
                 </div>
                 <div class="firstRow3">
                         <div class="col-2">                       
-                                <div class="square" id="first-row3-s1">R3S1</div>
-                                <div class="square" id="first-row3-s2">R3S2</div>
-                                <div class="square" id="first-row3-s3">R3S3</div>
-                                <div class="square" id="first-row3-s4">R3S4</div>
-                                <div class="square" id="first-row3-s5">R3S5</div>
-                                <div class="square" id="first-row3-s6">R3S6</div>
-                                <div class="square" id="first-row3-s7">R3S6</div>
-                                <div class="square" id="first-row3-s8">R3S8</div>
-                                <div class="square" id="first-row3-s9">R3S9</div>
-                                <div class="square" id="first-row3-s10">R3S10</div>
-                                <div class="square" id="first-row3-s11">R3S11</div>
-                                <div class="square" id="first-row3-s12">R3S12</div>
-                                <div class="square" id="first-row3-s13">R3S13</div>
-                                <div class="square" id="first-row3-s14">R3S14</div>
-                                <div class="square" id="first-row3-s15">R3S15</div>
-                                <div class="square" id="first-row3-s16">R3S16</div>
-                                <div class="square" id="first-row3-s17">R3S17</div>
-                                <div class="square" id="first-row3-s18">R3S18</div>
-                                <div class="square" id="first-row3-s18">R3S19</div>
-                                <div class="square" id="first-row3-s20">R3S20</div>
-                                <div class="square" id="first-row3-s21">R3S21</div>
-                                <div class="square" id="first-row3-s22">R3S22</div>
-                                <div class="square" id="first-row3-s23">R3S23</div>
-                                <div class="square" id="first-row3-s24">R3S24</div>
-                                <div class="square" id="first-row3-s25">R3S25</div>
-                                <div class="square" id="first-row3-s26">R3S26</div>
-                                <div class="square" id="first-row3-s27">R3S27</div>
-                                <div class="square" id="first-row3-s28">R3S28</div>
-                                <div class="square" id="first-row3-s29">R3S29</div>   
+                                <div class="square" id="first-row3-s1" (click)="onSubmit($event)" type="submit" data-id ="59">R3S1</div>
+                                <div class="square" id="first-row3-s2" (click)="onSubmit($event)" type="submit" data-id ="60">R3S2</div>
+                                <div class="square" id="first-row3-s3" (click)="onSubmit($event)" type="submit" data-id ="61">R3S3</div>
+                                <div class="square" id="first-row3-s4" (click)="onSubmit($event)" type="submit" data-id ="62">R3S4</div>
+                                <div class="square" id="first-row3-s5" (click)="onSubmit($event)" type="submit" data-id ="63">R3S5</div>
+                                <div class="square" id="first-row3-s6" (click)="onSubmit($event)" type="submit" data-id ="64">R3S6</div>
+                                <div class="square" id="first-row3-s7" (click)="onSubmit($event)" type="submit" data-id ="65">R3S7</div>
+                                <div class="square" id="first-row3-s8" (click)="onSubmit($event)" type="submit" data-id ="66">R3S8</div>
+                                <div class="square" id="first-row3-s9" (click)="onSubmit($event)" type="submit" data-id ="67">R3S9</div>
+                                <div class="square" id="first-row3-s10" (click)="onSubmit($event)" type="submit" data-id ="68">R3S10</div>
+                                <div class="square" id="first-row3-s11" (click)="onSubmit($event)" type="submit" data-id ="69">R3S11</div>
+                                <div class="square" id="first-row3-s12" (click)="onSubmit($event)" type="submit" data-id ="70">R3S12</div>
+                                <div class="square" id="first-row3-s13" (click)="onSubmit($event)" type="submit" data-id ="71">R3S13</div>
+                                <div class="square" id="first-row3-s14" (click)="onSubmit($event)" type="submit" data-id ="72">R3S14</div>
+                                <div class="square" id="first-row3-s15" (click)="onSubmit($event)" type="submit" data-id ="73">R3S15</div>
+                                <div class="square" id="first-row3-s16" (click)="onSubmit($event)" type="submit" data-id ="74">R3S16</div>
+                                <div class="square" id="first-row3-s17" (click)="onSubmit($event)" type="submit" data-id ="75">R3S17</div>
+                                <div class="square" id="first-row3-s18" (click)="onSubmit($event)" type="submit" data-id ="76">R3S18</div>
+                                <div class="square" id="first-row3-s18" (click)="onSubmit($event)" type="submit" data-id ="77">R3S19</div>
+                                <div class="square" id="first-row3-s20" (click)="onSubmit($event)" type="submit" data-id ="78">R3S20</div>
+                                <div class="square" id="first-row3-s21" (click)="onSubmit($event)" type="submit" data-id ="79">R3S21</div>
+                                <div class="square" id="first-row3-s22" (click)="onSubmit($event)" type="submit" data-id ="80">R3S22</div>
+                                <div class="square" id="first-row3-s23" (click)="onSubmit($event)" type="submit" data-id ="81">R3S23</div>
+                                <div class="square" id="first-row3-s24" (click)="onSubmit($event)" type="submit" data-id ="82">R3S24</div>
+                                <div class="square" id="first-row3-s25" (click)="onSubmit($event)" type="submit" data-id ="83">R3S25</div>
+                                <div class="square" id="first-row3-s26" (click)="onSubmit($event)" type="submit" data-id ="84">R3S26</div>
+                                <div class="square" id="first-row3-s27" (click)="onSubmit($event)" type="submit" data-id ="85">R3S27</div>
+                                <div class="square" id="first-row3-s28" (click)="onSubmit($event)" type="submit" data-id ="86">R3S28</div>
+                                <div class="square" id="first-row3-s29" (click)="onSubmit($event)" type="submit" data-id ="87">R3S29</div>   
                         </div>
                     </div>
                     <div class="firstRow4A">
                             <div class="col-2">                       
-                                    <div class="square" id="first-row4-s1">R4S1</div>
-                                    <div class="square" id="first-row4-s2">R4S2</div>
-                                    <div class="square" id="first-row4-s3">R4S3</div>
-                                    <div class="square" id="first-row4-s4">R4S4</div>
-                                    <div class="square" id="first-row4-s5">R4S5</div>
-                                    <div class="square" id="first-row4-s6">R4S6</div>
-                                    <div class="square" id="first-row4-s7">R4S6</div>
-                                    <div class="square" id="first-row4-s8">R4S8</div>
-                                    <div class="square" id="first-row4-s9">R4S9</div>
-                                    <div class="square" id="first-row4-s10">R4S10</div>
-                                    <div class="square" id="first-row4-s11">R4S11</div>
-                                    <div class="square" id="first-row4-s12">R4S12</div>
-                                    <div class="square" id="first-row4-s13">R4S13</div>
-                                    <div class="square" id="first-row4-s14">R4S14</div>    
+                                    <div class="square" id="first-row4-s1" (click)="onSubmit($event)" type="submit" data-id ="88">R4S1</div>
+                                    <div class="square" id="first-row4-s2" (click)="onSubmit($event)" type="submit" data-id ="89">R4S2</div>
+                                    <div class="square" id="first-row4-s3" (click)="onSubmit($event)" type="submit" data-id ="90">R4S3</div>
+                                    <div class="square" id="first-row4-s4" (click)="onSubmit($event)" type="submit" data-id ="91">R4S4</div>
+                                    <div class="square" id="first-row4-s5" (click)="onSubmit($event)" type="submit" data-id ="92">R4S5</div>
+                                    <div class="square" id="first-row4-s6" (click)="onSubmit($event)" type="submit" data-id ="93">R4S6</div>
+                                    <div class="square" id="first-row4-s7" (click)="onSubmit($event)" type="submit" data-id ="94">R4S7</div>
+                                    <div class="square" id="first-row4-s8" (click)="onSubmit($event)" type="submit" data-id ="95">R4S8</div>
+                                    <div class="square" id="first-row4-s9" (click)="onSubmit($event)" type="submit" data-id ="96">R4S9</div>
+                                    <div class="square" id="first-row4-s10" (click)="onSubmit($event)" type="submit" data-id ="97">R4S10</div>
+                                    <div class="square" id="first-row4-s11" (click)="onSubmit($event)" type="submit" data-id ="98">R4S11</div>
+                                    <div class="square" id="first-row4-s12" (click)="onSubmit($event)" type="submit" data-id ="99">R4S12</div>
+                                    <div class="square" id="first-row4-s13" (click)="onSubmit($event)" type="submit" data-id ="100">R4S13</div>
+                                    <div class="square" id="first-row4-s14" (click)="onSubmit($event)" type="submit" data-id ="101">R4S14</div>    
                             </div>
                         </div>
                         <div class="firstRow4B">
                                 <div class="col-2">                       
-                                    <div class="square" id="first-row4-s15">R4S15</div>
-                                    <div class="square" id="first-row4-s16">R4S16</div>
-                                    <div class="square" id="first-row4-s17">R4S17</div>
-                                    <div class="square" id="first-row4-s18">R4S18</div>
-                                    <div class="square" id="first-row4-s18">R4S19</div>
-                                    <div class="square" id="first-row4-s20">R4S20</div>
-                                    <div class="square" id="first-row4-s21">R4S21</div>
-                                    <div class="square" id="first-row4-s22">R4S22</div>
-                                    <div class="square" id="first-row4-s23">R4S23</div>
-                                    <div class="square" id="first-row4-s24">R4S24</div>
-                                    <div class="square" id="first-row4-s25">R4S25</div>
-                                    <div class="square" id="first-row4-s26">R4S26</div>     
+                                    <div class="square" id="first-row4-s15" (click)="onSubmit($event)" type="submit" data-id ="102">R4S15</div>
+                                    <div class="square" id="first-row4-s16" (click)="onSubmit($event)" type="submit" data-id ="103">R4S16</div>
+                                    <div class="square" id="first-row4-s17" (click)="onSubmit($event)" type="submit" data-id ="104">R4S17</div>
+                                    <div class="square" id="first-row4-s18" (click)="onSubmit($event)" type="submit" data-id ="105">R4S18</div>
+                                    <div class="square" id="first-row4-s18" (click)="onSubmit($event)" type="submit" data-id ="106">R4S19</div>
+                                    <div class="square" id="first-row4-s20" (click)="onSubmit($event)" type="submit" data-id ="107">R4S20</div>
+                                    <div class="square" id="first-row4-s21" (click)="onSubmit($event)" type="submit" data-id ="108">R4S21</div>
+                                    <div class="square" id="first-row4-s22" (click)="onSubmit($event)" type="submit" data-id ="109">R4S22</div>
+                                    <div class="square" id="first-row4-s23" (click)="onSubmit($event)" type="submit" data-id ="100">R4S23</div>
+                                    <div class="square" id="first-row4-s24" (click)="onSubmit($event)" type="submit" data-id ="111">R4S24</div>
+                                    <div class="square" id="first-row4-s25" (click)="onSubmit($event)" type="submit" data-id ="112">R4S25</div>
+                                    <div class="square" id="first-row4-s26" (click)="onSubmit($event)" type="submit" data-id ="113">R4S26</div>     
                                 </div>
                             </div>
             <!-- <div class="gateEntrance">Entrance</div> -->

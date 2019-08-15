@@ -24,6 +24,9 @@ public class Parkinglot {
   @Column(name = "user_id")
   private Long userId;
 
+  @Column (name ="name")
+  private String name;
+
   public Long getId() {
     return this.id;
   }
@@ -56,4 +59,11 @@ public class Parkinglot {
     this.userId = userId;
   }
 
+  public String getName() {
+    return this.name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 }

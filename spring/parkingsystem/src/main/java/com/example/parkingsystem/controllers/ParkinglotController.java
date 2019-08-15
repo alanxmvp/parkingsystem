@@ -40,6 +40,12 @@ public class ParkinglotController {
     return parkingRepository.findByLocationId(locationId);
   }
 
+  // get all parkinglot details
+  @GetMapping(value ="/lotStatusAll", produces = "application/json")
+  public List<Parkinglot> showAllParkingLot() {
+    return parkingRepository.findAll();
+  }
+
   // get parkinglot status by id
   @GetMapping(value ="/lotStatus/{id}", produces = "application/json")
   public Optional<Parkinglot> showParkingLot(@PathVariable long id) {

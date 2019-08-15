@@ -16,6 +16,9 @@ export class ParkingLots {
   @Column()
   status: number;
 
+  @Column({nullable: true})
+  name: String;
+
   @ManyToOne(type => Users, user => user.parkinglots)
   @JoinColumn({ name: "user_id" })
   users: Users[]

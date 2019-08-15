@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {parkingLotService} from '../parkinglot.service'
+import {parkingLotService} from '../parkinglot.service';
 import { ActivatedRoute } from '@angular/router';
+
+interface HomePage{
+  id: number,
+  label: String,
+  total: number
+}
 
 @Component({
   selector: 'app-home-page',
@@ -15,7 +21,6 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.locationId = this.route.snapshot.params.locationId
-    
     this.service.getLocations().subscribe(homepages=>{
       this.homepages = homepages as HomePage[]
       console.log(this.homepages)
