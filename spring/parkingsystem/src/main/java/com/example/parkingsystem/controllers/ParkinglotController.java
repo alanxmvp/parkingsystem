@@ -34,11 +34,11 @@ public class ParkinglotController {
     return parkingRepository.findByLocationIdAndStatus(locationId, status);
   }
 
-  // not using
-  @GetMapping(value = "/lotStatusByLoc", produces = "application/json")
-  public List<Parkinglot> displayAvailableByLoc(@RequestParam Long locationId) {
-    return parkingRepository.findByLocationId(locationId);
-  }
+  // count
+  // @GetMapping(value = "/lotStatusByLoc/{id}/{status}", produces = "application/json")
+  // public List<Parkinglot> displayAvailableByLoc(@RequestParam Long id, Long status) {
+  //   return parkingRepository.countStatusByLocationId(id, status);
+  // }
 
   // get all parkinglot details
   @GetMapping(value ="/lotStatusAll", produces = "application/json")

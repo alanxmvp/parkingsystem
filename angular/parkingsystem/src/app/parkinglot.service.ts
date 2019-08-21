@@ -29,17 +29,10 @@ export class parkingLotService{
         const url  = 'http://localhost:8080/api/locations'
         return this.http.get(url);
     }
-
+    //parking lot
     //get all parkinglot
     getParkingLotAll(){
-        const url = 'http://localhost:8080/api//lotStatusAll'
-        return this.http.get(url);
-    }
-
-    //parking lot
-    // get parkinglot status by id
-    getParkingLotById(parkingLotId){
-        const url = 'http://localhost:8080/api/lotStatus/' + parkingLotId
+        const url = 'http://localhost:8080/api/lotStatusAll'
         return this.http.get(url);
     }
 
@@ -50,6 +43,20 @@ export class parkingLotService{
         const params = data;
         console.log(updateurl)
         this.http.post(updateurl,params).toPromise().then(data =>{console.log(data);}); 
+    }
+
+    //parkinglot
+    //update locations available count
+    getLocationAvailableCount(id, status){
+        const url = 'http://localhost:8080/api/lotStatusByLoc/' + id +'/' +status 
+        return this.http.get(url);
+    }
+
+    //parking lot - not using
+    // get parkinglot status by id
+    getParkingLotById(parkingLotId){
+        const url = 'http://localhost:8080/api/lotStatus/' + parkingLotId
+        return this.http.get(url);
     }
 
     // not in use

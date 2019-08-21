@@ -16,4 +16,6 @@ export class Locations {
   @OneToMany(type => ParkingLots, parkinglot => parkinglot.location)
   parkinglots: ParkingLots[]
 
+  @Column({nullable: true})
+  available_count: number;
 }

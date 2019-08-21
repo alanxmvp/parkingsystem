@@ -10,6 +10,8 @@ import com.example.parkingsystem.repositories.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +26,16 @@ public class LocationController {
   @GetMapping(value = "/locations", produces = "application/json")
   public List<Location> showAllLocation() {
     return locationRepository.findAll();
+  }
+
+  //update available count
+  @PostMapping(value = "/locations/{id}", produces = "application/json")
+  public void updateLocationAvailbleCount(@RequestBody Location locations, @PathVariable("id") long id){
+    Location currentLocation = locationRepository.findById(id).orElse(new Location());
+    if(currentLocation != null){
+      locations.setId(id);
+      locationRepository.save(locations);
+    }
   }
 
   //not using

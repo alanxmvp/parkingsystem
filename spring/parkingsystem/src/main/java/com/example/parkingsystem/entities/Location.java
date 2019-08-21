@@ -21,6 +21,17 @@ public class Location {
   @Column(name = "total")
   private Long total;
 
+  @Column(name ="available_count")
+  private Long availableCount;
+
+  public Long getAvailableCount() {
+    return this.availableCount;
+  }
+
+  public void setAvailableCount(Long availableCount) {
+    this.availableCount = availableCount;
+  }
+
   public long getId() {
     return this.id;
   }
